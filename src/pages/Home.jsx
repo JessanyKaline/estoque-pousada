@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Menu from '../molecules/Menu';
+import {Link} from 'react-router-dom';
+
 
 export const StyledDiv = styled.div`
 display: flex;
@@ -17,6 +19,9 @@ padding: 4rem;
 
 `
 
+export const linkStyle = {
+    textDecoration: "none",
+    };
 
 
 export default function Home() {
@@ -27,15 +32,15 @@ export default function Home() {
     <List>
         
           <ListItem >
-            <Button variant="contained" sx={{ marginBottom:3, marginTop:5, width:300}}> Relatórios</Button>
+           <Link style={linkStyle}> <Button variant="contained" sx={{ marginBottom:3, marginTop:5, width:300}}> Relatórios</Button></Link>
           </ListItem>
 
           <ListItem>
-            <Button variant="contained"  sx={{ marginBottom:3, marginTop:3, width:300}}> Cadastrar</Button>
+          <Link style={linkStyle}><Button variant="contained"  sx={{ marginBottom:3, marginTop:3, width:300}}> Cadastrar</Button></Link>
           </ListItem>
 
           <ListItem>
-            <Button variant="contained" sx={{ marginBottom:3, marginTop:3, width:300}}> Saídas</Button>
+          <Link style={linkStyle}><Button variant="contained" sx={{ marginBottom:3, marginTop:3, width:300}}> Saídas</Button></Link>
           </ListItem>
         
       </ List>
