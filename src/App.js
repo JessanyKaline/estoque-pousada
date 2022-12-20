@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 import Login from "./pages/Login";
-import Menu from "./molecules/Menu";
+import Home from './pages/Home';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Menu />} />
+        <Route path="/home" element={<Home />} />
         </Routes>
     </BrowserRouter>
   );
