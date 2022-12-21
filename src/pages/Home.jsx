@@ -12,12 +12,12 @@ display: flex;
 justify-content: center;
 height: 70vh;
 padding: 4rem;
-
 @media screen and (min-width: 281px) and (max-width: 440px){
-    flex-direction:column;
-    margin: 0 em;
-
-`
+  flex-direction:column;
+  margin: 0em;
+  
+}
+`;
 
 export const linkStyle = {
     textDecoration: "none",
