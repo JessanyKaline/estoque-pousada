@@ -7,6 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+
 function createData(Nome, Categoria, Quantidade) {
   return { Nome, Categoria, Quantidade};
 }
@@ -41,7 +45,11 @@ export default function BasicTable() {
               </TableCell>
               <TableCell align="right">{produto.Categoria}</TableCell>
               <TableCell align="right">{produto.Quantidade}</TableCell>
-              
+              <TableCell align="right">
+              <DeleteOutlinedIcon />
+              <AddCircleOutlineOutlinedIcon/>
+              <EditOutlinedIcon/>
+              </TableCell>
               
             </TableRow>
           ))}
