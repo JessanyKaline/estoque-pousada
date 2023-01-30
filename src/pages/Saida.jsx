@@ -58,7 +58,7 @@ export default function Cadastrar() {
         autoComplete="off"
       >
         <Typography variant="h4" align="center" gutterBottom>
-          Saida Produtos
+          Saída Produtos
         </Typography>
         <StyleDivInput>
           <TextField required id="categoria" label="Produto" />

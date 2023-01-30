@@ -32,15 +32,15 @@ export default function Home() {
     <List>
         
           <ListItem >
-           <Link style={linkStyle}> <Button variant="contained" sx={{ marginBottom:3, marginTop:5, width:300}}> Relatórios</Button></Link>
+           <Link to="/relatorios"style={linkStyle}> <Button variant="contained" sx={{ marginBottom:3, marginTop:5, width:300}}> Relatórios</Button></Link>
           </ListItem>
 
           <ListItem>
-          <Link style={linkStyle}><Button variant="contained"  sx={{ marginBottom:3, marginTop:3, width:300}}> Cadastrar</Button></Link>
+          <Link to="/cadastrar" style={linkStyle}><Button variant="contained"  sx={{ marginBottom:3, marginTop:3, width:300}}> Cadastrar</Button></Link>
           </ListItem>
 
           <ListItem>
-          <Link style={linkStyle}><Button variant="contained" sx={{ marginBottom:3, marginTop:3, width:300}}> Saídas</Button></Link>
+          <Link to="/saida"style={linkStyle}><Button variant="contained" sx={{ marginBottom:3, marginTop:3, width:300}}> Saídas</Button></Link>
           </ListItem>
         
       </ List>
