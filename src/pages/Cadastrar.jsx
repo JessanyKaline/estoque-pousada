@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { linkStyle } from "./Home";
 import Typography from "@mui/material/Typography";
 import TabelaProdutos from "../atoms/TabelaProdutos";
+import axios from "axios";
+
 
 const StyleDivInput = styled.div`
   display: flex;
@@ -49,6 +51,32 @@ const StyleDivLista = styled.div`
 `;
 
 export default function Cadastrar() {
+  const [product, setProduct] = React.useState({
+    produto: "",
+    quantidade: "",
+  });
+
+  const handleChange = (event) => {
+    setProduct({ ...product, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/create", {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: product
+      });
+  
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <Menu />
@@ -62,16 +90,28 @@ export default function Cadastrar() {
         }}
         noValidate
         autoComplete="off"
+        onSubmit={handleSubmit}
+        
       >
         <Typography variant="h4" align="center" gutterBottom>
           Cadastrar Produtos
         </Typography>
         <StyleDivInput>
-          <TextField required id="categoria" label="Produto" />
+          <TextField
+            required
+            id="produto"
+            label="Produto"
+            name="produto"
+            value={product.produto}
+            onChange={handleChange}
+          />
           <TextField
             id="quantidade"
             label="Quantidade"
             type="number"
+            name="quantidade"
+            value={product.quantidade}
+            onChange={handleChange}
             InputLabelProps={{
               shrink: true,
             }}
@@ -81,7 +121,7 @@ export default function Cadastrar() {
 
         <StyleDivButton>
           <Link style={linkStyle}>
-            <Button variant="contained" sx={{ width: 250 }}>
+            <Button variant="contained" sx={{ width: 250 }} type="submit" onClick={handleSubmit} >
               {" "}
               Cadastrar
             </Button>
@@ -110,9 +150,8 @@ export default function Cadastrar() {
             </Button>
           </Link>
         </StyleDivLista>
-        <TabelaProdutos/>
+        <TabelaProdutos />
       </Box>
-      
     </div>
   );
 }
